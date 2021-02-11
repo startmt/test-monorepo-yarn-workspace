@@ -7,8 +7,16 @@
     "rootDir": "./src",
     "declaration": true,
     "sourceMap": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "paths": {
+      "utils": ["../utils/src"]
+    }
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "references": [
+    {
+      "path": "../utils/tsconfig.build.json"
+    }
+  ]
 }

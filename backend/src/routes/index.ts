@@ -1,20 +1,19 @@
 import { Router } from "express";
-import { transformTodo } from "../mapper";
-import { TodoSchema } from "../schema";
+import {
+  createTodoController,
+  getTodoByIdController,
+  getTodoController,
+} from "../controllers";
 
 const router = Router();
 
-const getTodoRoute = router.get("/todo", async (req, res) => {
-  const todo = await TodoSchema.find({}).exec();
-  const todoMap = transformTodo(todo);
-  res.send(todoMap);
-});
+const getTodoRoute = router.get("/todo", getTodoController);
+const getTodoByIdRoute = router.get("/todo/:id", getTodoByIdController);
 
-const createTodoRoute = router.post("/todo", async (req, res) => {
-  const todo = new TodoSchema({ ...req.body });
-  todo.save();
-  res.status(201).end();
-});
+const createTodoRoute = router.post("/todo", createTodoController);
 
-router.use([getTodoRoute, createTodoRoute]);
+const notFound = router.all("*", (req, res) => {
+  return res.status(404).send("Not Found");
+});
+router.use([getTodoRoute, createTodoRoute, getTodoByIdRoute, notFound]);
 export default router;
