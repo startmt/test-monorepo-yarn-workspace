@@ -1,0 +1,21 @@
+{
+  "name": "monorepo-framework",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "backend": "yarn utils build & yarn workspace backend",
+    "dev:frontend": "yarn utils build & yarn frontend dev",
+    "frontend": "yarn workspace frontend",
+    "utils": "yarn workspace utils",
+    "build": "yarn workspaces run build",
+    "start:backend": "yarn backend start",
+    "start:frontend": "yarn frontend start"
+  },
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend",
+    "utils"
+  ]
+}

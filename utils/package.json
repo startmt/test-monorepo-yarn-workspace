@@ -1,0 +1,12 @@
+{
+  "name": "utils",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "rm -rf ./dist && rm -rf tsconfig.build.tsbuildinfo & tsc -b tsconfig.build.json"
+  },
+  "devDependencies": {
+    "typescript": "^4.1.5"
+  }
+}
