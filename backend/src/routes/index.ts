@@ -7,7 +7,7 @@ const router = Router();
 const getTodoRoute = router.get("/todo", async (req, res) => {
   const todo = await TodoSchema.find({}).exec();
   const todoMap = transformTodo(todo);
-  res.send({ data: todoMap });
+  res.send(todoMap);
 });
 
 const createTodoRoute = router.post("/todo", async (req, res) => {

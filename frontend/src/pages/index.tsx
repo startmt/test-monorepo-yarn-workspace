@@ -1,11 +1,9 @@
 import React from "react";
-import { ITodo } from "utils";
+import { useTodo } from "../hooks/todo-hooks";
 const IndexPage = () => {
-  const a: ITodo = {
-    id: "1",
-    message: "Hello",
-  };
-  return <div> {a.id}</div>;
+  const { todoListoData } = useTodo();
+  console.log(todoListoData);
+  return <div> 1</div>;
 };
 
 export default IndexPage;
