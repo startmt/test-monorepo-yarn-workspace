@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "backend": "yarn utils build & yarn workspace backend",
+    "backend": "yarn workspace backend",
+    "dev:backend": "yarn utils build & yarn backend dev",
     "dev:frontend": "yarn utils build & yarn frontend dev",
     "frontend": "yarn workspace frontend",
     "utils": "yarn workspace utils",
