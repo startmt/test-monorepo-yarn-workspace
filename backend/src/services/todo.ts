@@ -1,7 +1,7 @@
 import { ITodo } from "utils";
-import { transformTodo, transformTodoList } from "../mapper";
-import { TodoSchema } from "../schema";
+import { transformTodo, transformTodoList } from "~/mapper";
 import { ObjectId } from "mongodb";
+import { TodoSchema } from "~/schema";
 export const getTodoService = async () => {
   const todo = await TodoSchema.find({}).exec();
   const todoMap = transformTodoList(todo);

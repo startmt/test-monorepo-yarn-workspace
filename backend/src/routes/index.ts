@@ -1,9 +1,9 @@
-import { Router } from "express";
 import {
   createTodoController,
   getTodoByIdController,
   getTodoController,
-} from "../controllers";
+} from "~/controllers";
+import { Router } from "express";
 
 const router = Router();
 

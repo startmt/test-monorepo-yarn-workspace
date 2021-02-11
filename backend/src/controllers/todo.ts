@@ -1,10 +1,10 @@
 import { getTodoByIdService, getTodoService } from "../services";
 import { Request, Response } from "express";
+import { createTodoService } from "~/services";
 import {
-  createTodoService,
   IRequestCreateTodoService,
   IRequestGetTodoByIdService,
-} from "../services/todo";
+} from "~/services/todo";
 
 export const getTodoController = async (req: Request, res: Response) => {
   try {
