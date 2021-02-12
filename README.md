@@ -1,6 +1,9 @@
 # test-monorepo-yarn-workspace
 
 require Mongo db first
+```
+mongodb://localhost:27017
+```
 
 ## Development
 
